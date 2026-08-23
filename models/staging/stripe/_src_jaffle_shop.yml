@@ -1,0 +1,10 @@
+sources:
+  - name: stripe
+    database: raw
+    schema: jaffle_shop
+    tables:
+      - name: payments
+        config:
+          freshness:
+            warn_after: {count: 24, period: hour}
+            error_after: {count: 48, period: hour}
